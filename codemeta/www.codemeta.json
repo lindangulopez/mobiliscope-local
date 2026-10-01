@@ -1,0 +1,203 @@
+{
+  "@context": "https://w3id.org/codemeta/4.0",
+  "@type": "SoftwareSourceCode",
+  "name": "Mobiliscope - www",
+  "description": "Source code of the Mobiliscope website, a free and open-source web mapping platform for the interactive exploration of cities and social mix around the clock (24 hours). PHP pages read per-city CSV, GeoJSON and JSON files from an S3 bucket (MinIO); maps and charts are drawn in the browser with d3 and Leaflet.",
+  "codeRepository": "https://gitlab.huma-num.fr/mobiliscope/www",
+  "readme": "https://gitlab.huma-num.fr/mobiliscope/www/-/blob/master/readme.md",
+  "version": "4.3",
+  "dateCreated": "2017",
+  "dateModified": "2026-10-01",
+  "programmingLanguage": [
+    "PHP",
+    "JavaScript",
+    "SCSS"
+  ],
+  "runtimePlatform": [
+    "PHP 7.4",
+    "Apache HTTP Server 2.4"
+  ],
+  "operatingSystem": "Cross-platform (web application)",
+  "applicationCategory": "Geovisualisation",
+  "keywords": [
+    "geovisualisation",
+    "daily mobility",
+    "ambient population",
+    "social segregation",
+    "time-geography",
+    "origin-destination surveys",
+    "open science",
+    "web mapping"
+  ],
+  "softwareRequirements": [
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "aws/aws-sdk-php",
+      "version": "^3.258"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "maennchen/zipstream-php",
+      "version": "^2.1"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "d3",
+      "version": "3.5.17"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "Leaflet"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "jQuery",
+      "version": "^3.6.0"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "MinIO or any S3-compatible object storage"
+    }
+  ],
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Julie",
+      "familyName": "Vallée",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "CNRS, Laboratoire Interdisciplinaire Solidarités, Sociétés, Territoires (LISST, UMR 5193), Toulouse"
+      }
+    },
+    {
+      "@type": "Person",
+      "givenName": "Aurélie",
+      "familyName": "Douet",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Centre de Recherches Historiques (EHESS/CNRS)"
+      }
+    },
+    {
+      "@type": "Person",
+      "givenName": "Guillaume",
+      "familyName": "Le Roux",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Institut national d'études démographiques (Ined)"
+      }
+    },
+    {
+      "@type": "Person",
+      "givenName": "Hadrien",
+      "familyName": "Commenges",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Université Paris 1 Panthéon-Sorbonne, UMR Géographie-cités"
+      }
+    },
+    {
+      "@type": "Person",
+      "givenName": "Constance",
+      "familyName": "Lecomte"
+    },
+    {
+      "@type": "Person",
+      "givenName": "Élisa",
+      "familyName": "Villard"
+    }
+  ],
+  "contributor": [
+    {
+      "@type": "Person",
+      "givenName": "Renaud",
+      "familyName": "Bessières",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "qodop"
+      }
+    },
+    {
+      "@type": "Person",
+      "givenName": "Angelo",
+      "familyName": "Matte",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Laboratoire Interdisciplinaire Solidarités, Sociétés, Territoires (LISST, UMR 5193), Toulouse"
+      }
+    }
+  ],
+  "relatedSoftware": "https://gitlab.huma-num.fr/mobiliscope/data-process",
+  "archivedAt": "https://archive.softwareheritage.org/browse/origin/directory/?origin_url=https://gitlab.huma-num.fr/mobiliscope/www",
+  "identifier": "swh:1:snp:373b6da0fd432497a492837173f02bca0180ee02;origin=https://gitlab.huma-num.fr/mobiliscope/www",
+  "license": "https://spdx.org/licenses/AGPL-3.0-only",
+  "developmentStatus": "https://www.repostatus.org/#active",
+  "url": "https://mobiliscope.cnrs.fr",
+  "softwareHelp": {
+    "@type": "schema:WebPage",
+    "name": "Guide Administrateur·rice v4.3",
+    "url": "https://mobiliscope.quarto.pub/guide_admin/guide_admin.html"
+  },
+  "maintainer": [
+    {
+      "@type": "Person",
+      "givenName": "Julie",
+      "familyName": "Vallée",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "CNRS, Laboratoire Interdisciplinaire Solidarités, Sociétés, Territoires (LISST, UMR 5193), Toulouse"
+      }
+    },
+    {
+      "@type": "Person",
+      "givenName": "Angelo",
+      "familyName": "Matte",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Laboratoire Interdisciplinaire Solidarités, Sociétés, Territoires (LISST, UMR 5193), Toulouse"
+      }
+    }
+  ],
+  "funding": [
+    {
+      "@type": "schema:Grant",
+      "name": "Dispositif SOSI (Suivi Ouvert des Sociétés et de leurs Interactions)",
+      "funder": {
+        "@type": "Organization",
+        "name": "CNRS Sciences humaines et sociales"
+      }
+    }
+  ],
+  "supportingData": {
+    "@type": "schema:Dataset",
+    "name": "Mobiliscope open data [v4.3]",
+    "identifier": "https://doi.org/10.5281/zenodo.11111161",
+    "license": "https://spdx.org/licenses/ODbL-1.0"
+  },
+  "citation": {
+    "@type": "schema:ScholarlyArticle",
+    "name": "Intersectional approach of everyday geography",
+    "author": [
+      {
+        "@type": "Person",
+        "givenName": "Julie",
+        "familyName": "Vallée"
+      },
+      {
+        "@type": "Person",
+        "givenName": "Maxime",
+        "familyName": "Lenormand"
+      }
+    ],
+    "datePublished": "2024",
+    "isPartOf": {
+      "@type": "schema:Periodical",
+      "name": "Environment and Planning B: Urban Analytics and City Science"
+    },
+    "identifier": "https://doi.org/10.1177/23998083231174025"
+  },
+  "copyrightHolder": {
+    "@type": "Organization",
+    "name": "Centre national de la recherche scientifique (CNRS)"
+  }
+}

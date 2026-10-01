@@ -1,0 +1,12 @@
+# Upstream clones (separate repositories, fetched by `make clone`)
+/www/
+/data-process/
+
+# Open data from Zenodo, 15 GB unzipped (fetched by `make data`)
+/zenodo/
+
+# Private working notes
+/IMPROVEMENTS.md
+
+# Generated outputs
+/r_check/*.csv

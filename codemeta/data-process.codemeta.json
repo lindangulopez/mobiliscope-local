@@ -1,0 +1,221 @@
+{
+  "@context": "https://w3id.org/codemeta/4.0",
+  "@type": "SoftwareSourceCode",
+  "name": "Mobiliscope - data-process",
+  "description": "R code that prepares the data displayed in the Mobiliscope: harmonisation of origin-destination and household travel surveys (France, Canada, Latin America), computation of the population present per sector and per hour, indicators, Duncan and Moran segregation indices, and the geographic layers. Also holds the Guide Administrateur·rice (Quarto).",
+  "codeRepository": "https://gitlab.huma-num.fr/mobiliscope/data-process",
+  "readme": "https://gitlab.huma-num.fr/mobiliscope/data-process/-/blob/main/README.md",
+  "version": "20230706",
+  "dateModified": "2026-04-08",
+  "programmingLanguage": [
+    "R"
+  ],
+  "runtimePlatform": "R",
+  "applicationCategory": "Data processing",
+  "keywords": [
+    "daily mobility",
+    "origin-destination surveys",
+    "EMC2",
+    "ambient population",
+    "segregation indices",
+    "Duncan index",
+    "Moran index",
+    "R",
+    "sf"
+  ],
+  "softwareRequirements": [
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "tidyverse"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "sf"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "spdep"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "OasisR"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "TraMineR"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "lwgeom"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "rmapshaper"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "areal"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "geojsonio"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "geojsonsf"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "jsonlite"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "readxl"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "haven"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "lubridate"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "foreach"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "doParallel"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "tidylog"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "skimr"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "COGugaison"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "aws.s3"
+    },
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "minio.s3"
+    }
+  ],
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "Aurélie",
+      "familyName": "Douet",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Centre de Recherches Historiques (EHESS/CNRS)"
+      }
+    },
+    {
+      "@type": "Person",
+      "givenName": "Julie",
+      "familyName": "Vallée",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "CNRS, Laboratoire Interdisciplinaire Solidarités, Sociétés, Territoires (LISST, UMR 5193), Toulouse"
+      }
+    },
+    {
+      "@type": "Person",
+      "givenName": "Constance",
+      "familyName": "Lecomte"
+    }
+  ],
+  "contributor": [
+    {
+      "@type": "Person",
+      "givenName": "Angelo",
+      "familyName": "Matte",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Laboratoire Interdisciplinaire Solidarités, Sociétés, Territoires (LISST, UMR 5193), Toulouse"
+      }
+    }
+  ],
+  "relatedSoftware": "https://gitlab.huma-num.fr/mobiliscope/www",
+  "archivedAt": "https://archive.softwareheritage.org/browse/origin/directory/?origin_url=https://gitlab.huma-num.fr/mobiliscope/data-process",
+  "identifier": "swh:1:snp:5332a88442fe0ca2f9150482840c22333cd2bdd1;origin=https://gitlab.huma-num.fr/mobiliscope/data-process",
+  "license": "https://spdx.org/licenses/AGPL-3.0-only",
+  "developmentStatus": "https://www.repostatus.org/#active",
+  "url": "https://mobiliscope.cnrs.fr",
+  "softwareHelp": {
+    "@type": "schema:WebPage",
+    "name": "Guide Administrateur·rice v4.3",
+    "url": "https://mobiliscope.quarto.pub/guide_admin/guide_admin.html"
+  },
+  "maintainer": [
+    {
+      "@type": "Person",
+      "givenName": "Julie",
+      "familyName": "Vallée",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "CNRS, Laboratoire Interdisciplinaire Solidarités, Sociétés, Territoires (LISST, UMR 5193), Toulouse"
+      }
+    },
+    {
+      "@type": "Person",
+      "givenName": "Angelo",
+      "familyName": "Matte",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Laboratoire Interdisciplinaire Solidarités, Sociétés, Territoires (LISST, UMR 5193), Toulouse"
+      }
+    }
+  ],
+  "funding": [
+    {
+      "@type": "schema:Grant",
+      "name": "Dispositif SOSI (Suivi Ouvert des Sociétés et de leurs Interactions)",
+      "funder": {
+        "@type": "Organization",
+        "name": "CNRS Sciences humaines et sociales"
+      }
+    }
+  ],
+  "supportingData": {
+    "@type": "schema:Dataset",
+    "name": "Mobiliscope open data [v4.3]",
+    "identifier": "https://doi.org/10.5281/zenodo.11111161",
+    "license": "https://spdx.org/licenses/ODbL-1.0"
+  },
+  "citation": {
+    "@type": "schema:ScholarlyArticle",
+    "name": "Intersectional approach of everyday geography",
+    "author": [
+      {
+        "@type": "Person",
+        "givenName": "Julie",
+        "familyName": "Vallée"
+      },
+      {
+        "@type": "Person",
+        "givenName": "Maxime",
+        "familyName": "Lenormand"
+      }
+    ],
+    "datePublished": "2024",
+    "isPartOf": {
+      "@type": "schema:Periodical",
+      "name": "Environment and Planning B: Urban Analytics and City Science"
+    },
+    "identifier": "https://doi.org/10.1177/23998083231174025"
+  },
+  "copyrightHolder": {
+    "@type": "Organization",
+    "name": "Centre national de la recherche scientifique (CNRS)"
+  }
+}

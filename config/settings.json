@@ -1,0 +1,9 @@
+{
+    "local": {
+        "minioEndPoint": "http://minio:9000",
+        "minioAccessKey": "admin",
+        "minioSecretKey": "password",
+        "majorVersion": "zenodo",
+        "minorVersion": "20230706opendata"
+    }
+}

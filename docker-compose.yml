@@ -1,0 +1,49 @@
+# Mobiliscope, local reproduction on Linux with Docker.
+# Nothing is installed on the host. All ports are bound to 127.0.0.1 only.
+#   web     http://127.0.0.1:8090
+#   minio   http://127.0.0.1:9010 (API)  http://127.0.0.1:9011 (console)
+name: mobiliscope-local
+
+services:
+  # MinIO is no longer distributed on Docker Hub or dl.min.io (checked 1 Oct 2026).
+  # The Chainguard builds are used instead; any S3-compatible server would do,
+  # since the PHP code only speaks S3 through the AWS SDK.
+  minio:
+    image: cgr.dev/chainguard/minio:latest
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-admin}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-password}
+    ports:
+      - "127.0.0.1:9010:9000"
+      - "127.0.0.1:9011:9001"
+    volumes:
+      - minio_data:/data
+
+  # MinIO client, used by `make load-data` to create the bucket and upload the
+  # unzipped Zenodo data through the S3 API (the admin guide warns that files
+  # copied straight into the MinIO folder break it).
+  mc:
+    image: cgr.dev/chainguard/minio-client:latest
+    profiles: ["tools"]
+    depends_on: [minio]
+    environment:
+      MC_HOST_local: http://${MINIO_ROOT_USER:-admin}:${MINIO_ROOT_PASSWORD:-password}@minio:9000
+    volumes:
+      - ./zenodo/opendata/20230706_opendata:/import:ro
+
+  web:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile.web
+    depends_on: [minio]
+    ports:
+      - "127.0.0.1:8090:80"
+    volumes:
+      - ./www:/var/www/html:ro
+      # The code reads these two files one level above the document root.
+      - ./config/.env:/var/www/.env:ro
+      - ./config/settings.json:/var/www/settings.json:ro
+
+volumes:
+  minio_data:

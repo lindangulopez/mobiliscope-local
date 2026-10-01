@@ -1,0 +1,6 @@
+# Local reproduction of the Mobiliscope web app (www).
+# PHP 7.4 + Apache 2.4, the versions named in the admin guide v4.3 (WampServer 3.3.0).
+FROM php:7.4-apache
+RUN a2enmod rewrite headers
+# www/.htaccess carries all the routing: it must be allowed to override.
+RUN sed -ri 's/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf
