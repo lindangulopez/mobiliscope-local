@@ -2,6 +2,7 @@
 # Nothing is installed on the host. All ports are bound to 127.0.0.1 only.
 #   web     http://127.0.0.1:8090
 #   minio   http://127.0.0.1:9010 (API)  http://127.0.0.1:9011 (console)
+#   geoserver http://127.0.0.1:8600/geoserver (optional, profile "api", see ogcapi/README_api.md)
 name: mobiliscope-local
 
 services:
@@ -44,6 +45,22 @@ services:
       # The code reads these two files one level above the document root.
       - ./config/.env:/var/www/.env:ro
       - ./config/settings.json:/var/www/settings.json:ro
+
+  # Optional: a GeoServer serving one city of the open data as OGC web services
+  # (WMS, WFS, OGC API - Features). Started by `make api-up`. Local prototype only:
+  # default admin account, port bound to 127.0.0.1.
+  geoserver:
+    image: docker.osgeo.org/geoserver:2.28.5
+    profiles: ["api"]
+    environment:
+      INSTALL_EXTENSIONS: "true"
+      STABLE_EXTENSIONS: "ogcapi-features"
+      SKIP_DEMO_DATA: "true"
+      EXTRA_JAVA_OPTS: "-Xms512m -Xmx1g"
+    ports:
+      - "127.0.0.1:8600:8080"
+    volumes:
+      - ./ogcapi/data:/opt/mobiliscope:ro
 
 volumes:
   minio_data:

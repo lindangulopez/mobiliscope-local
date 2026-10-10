@@ -10,3 +10,6 @@
 
 # Generated outputs
 /r_check/*.csv
+
+# OGC API prototype: layers rebuilt from the open data by `make api-data`
+/ogcapi/data/
