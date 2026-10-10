@@ -62,7 +62,13 @@ The same GeoServer also answers WMS and WFS at `http://127.0.0.1:8600/geoserver/
 | Total population present at 14:00 | 805,650 on both sides |
 | Declared conformance | OGC API - Features parts 1 (core, GeoJSON, HTML, OpenAPI 3.0), 2 (CRS) and 3 (filtering, CQL2) |
 
-Screenshots: `../screenshots/ogcapi_collections.png`, `../screenshots/ogcapi_presence_14h.png`.
+The collections page, as GeoServer serves it:
+
+![The two collections of the local OGC API, served by GeoServer](../screenshots/ogcapi_collections.png)
+
+The population present at 14:00, filtered on the server:
+
+![Items of the toulouse_presence collection at 14:00](../screenshots/ogcapi_presence_14h.png)
 
 ## Limits
 
